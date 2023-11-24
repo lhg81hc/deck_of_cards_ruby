@@ -13,7 +13,6 @@ module DeckOfCardsRuby
       end
     end
 
-    def_delegators :@list, :count, :shuffle!, :shift
     def_delegators :@list, :count, :shuffle!, :shift, :pop, :empty?
 
     def draw(from = 'top')
@@ -25,6 +24,19 @@ module DeckOfCardsRuby
       else
         raise "Invalid `from' argument"
       end
+    end
+
+    def take_cards(number_of_cards = 1)
+      raise "Must take at least 1 card" if number_of_cards < 1
+
+      (1..number_of_cards).to_a.map { |_n| take_a_card }
+    end
+
+    def take_a_card
+      return nil if empty?
+
+      idx = Random.new.rand(count)
+      idx && @list.delete_at(idx)
     end
 
     def pick(rank, suit)
