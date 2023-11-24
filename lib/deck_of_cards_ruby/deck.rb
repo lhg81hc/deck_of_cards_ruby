@@ -15,7 +15,16 @@ module DeckOfCardsRuby
 
     def_delegators :@list, :count, :shuffle!, :shift
 
-    alias draw shift
+    def draw(from = 'top')
+      case from
+      when 'top'
+        shift
+      when 'bottom'
+        pop
+      else
+        raise "Invalid `from' argument"
+      end
+    end
 
     def pick(rank, suit)
       return nil unless count.positive?
