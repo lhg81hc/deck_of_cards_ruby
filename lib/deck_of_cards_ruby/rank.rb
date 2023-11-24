@@ -1,6 +1,8 @@
-module DeckOfCardsRuby
-  class Rank
+# frozen_string_literal: true
 
+module DeckOfCardsRuby
+  # Class object which represents one of 13 possible ranks of a card
+  class Rank
     TRANSLATIONS = {
       '2' => 'two',
       '3' => 'three',
@@ -14,8 +16,8 @@ module DeckOfCardsRuby
       'j' => 'jack',
       'q' => 'queen',
       'k' => 'king',
-      'a' => 'ace',
-    }
+      'a' => 'ace'
+    }.freeze
 
     UNICODE_LONGITUDE = {
       'a' => '1',
@@ -30,8 +32,8 @@ module DeckOfCardsRuby
       '10' => 'A',
       'j' => 'B',
       'q' => 'D',
-      'k' => 'E',
-    }
+      'k' => 'E'
+    }.freeze
 
     def initialize(val)
       @val = val.to_s
