@@ -19,6 +19,14 @@ module DeckOfCardsRuby
       @list.shift
     end
 
+    def pick(rank, suit)
+      return nil unless count.positive?
+
+      wanted = Card.new(rank, suit)
+      idx = @list.index { |c| c.rank.to_s == wanted.rank.to_s && c.suit.to_s == wanted.suit.to_s }
+      idx && @list.delete_at(idx)
+    end
+
     def to_s
       @list.map(&:to_s).join(', ')
     end
