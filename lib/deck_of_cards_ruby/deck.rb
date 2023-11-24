@@ -1,3 +1,5 @@
+require 'forwardable'
+
 module DeckOfCardsRuby
   class Deck
     extend Forwardable
