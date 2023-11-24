@@ -1,11 +1,16 @@
+# frozen_string_literal: true
+
 require 'forwardable'
 
 module DeckOfCardsRuby
+  # Class object which represents a deck of cards
   class Deck
     extend Forwardable
 
     def initialize
-      @list = Rank::TRANSLATIONS.keys.product(Suit::ACCEPTED_VALUES).map{ |rank, suit| Card.new(rank, suit) }
+      @list = Rank::TRANSLATIONS.keys.product(Suit::ACCEPTED_VALUES).map do |rank, suit|
+        Card.new(rank, suit)
+      end
     end
 
     def_delegators :@list, :count, :shuffle!

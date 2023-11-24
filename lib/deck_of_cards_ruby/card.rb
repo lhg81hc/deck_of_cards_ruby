@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module DeckOfCardsRuby
+  # Class object which represents each card in the deck
   class Card
     def initialize(rank, suit)
       @suit = Suit.new(suit)
