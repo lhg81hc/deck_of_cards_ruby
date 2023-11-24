@@ -13,11 +13,9 @@ module DeckOfCardsRuby
       end
     end
 
-    def_delegators :@list, :count, :shuffle!
+    def_delegators :@list, :count, :shuffle!, :shift
 
-    def draw
-      @list.shift
-    end
+    alias draw shift
 
     def pick(rank, suit)
       return nil unless count.positive?
