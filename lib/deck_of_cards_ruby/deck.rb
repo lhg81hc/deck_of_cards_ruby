@@ -14,6 +14,7 @@ module DeckOfCardsRuby
     end
 
     def_delegators :@list, :count, :shuffle!, :shift
+    def_delegators :@list, :count, :shuffle!, :shift, :pop, :empty?
 
     def draw(from = 'top')
       case from
@@ -27,7 +28,7 @@ module DeckOfCardsRuby
     end
 
     def pick(rank, suit)
-      return nil unless count.positive?
+      return nil if empty?
 
       wanted = Card.new(rank, suit)
       idx = @list.index { |c| c.rank.to_s == wanted.rank.to_s && c.suit.to_s == wanted.suit.to_s }
