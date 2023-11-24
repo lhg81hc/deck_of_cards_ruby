@@ -15,6 +15,10 @@ module DeckOfCardsRuby
 
     def_delegators :@list, :count, :shuffle!, :shift, :pop, :empty?
 
+    def remaining
+      @list
+    end
+
     def draw(from = 'top')
       case from
       when 'top'
