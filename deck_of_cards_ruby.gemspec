@@ -1,11 +1,13 @@
 # frozen_string_literal: true
 
-require_relative "lib/deck_of_cards_ruby/version"
+lib = File.expand_path('lib', __dir__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require 'deck_of_cards_ruby/version'
 
 Gem::Specification.new do |spec|
   spec.name = "deck_of_cards_ruby"
   spec.version = DeckOfCardsRuby::VERSION
-  spec.authors = ["Thad"]
+  spec.authors = ["Thad Le"]
   spec.email = ["llengocthangg@gmail.com"]
 
   spec.summary = "Deck of cards in Ruby language"
