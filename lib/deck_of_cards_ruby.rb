@@ -1,11 +1,12 @@
 # frozen_string_literal: true
 
-require_relative "deck_of_cards_ruby/version"
+$LOAD_PATH.unshift File.dirname(__FILE__)
 
-require_relative 'deck_of_cards_ruby/card'
-require_relative 'deck_of_cards_ruby/deck'
-require_relative 'deck_of_cards_ruby/suit'
-require_relative 'deck_of_cards_ruby/rank'
+require 'deck_of_cards_ruby/version'
+require 'deck_of_cards_ruby/card'
+require 'deck_of_cards_ruby/deck'
+require 'deck_of_cards_ruby/suit'
+require 'deck_of_cards_ruby/rank'
 
 module DeckOfCardsRuby
   class Error < StandardError; end
