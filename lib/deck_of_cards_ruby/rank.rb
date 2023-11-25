@@ -9,7 +9,7 @@ module DeckOfCardsRuby
     end
 
     def validate
-      raise 'Invalid rank' unless Constants::Rank::TRANSLATIONS.keys.include?(@val)
+      raise 'Invalid rank' unless Constants::Rank::ACCEPTED_VALUES.include?(@val)
     end
 
     def to_s

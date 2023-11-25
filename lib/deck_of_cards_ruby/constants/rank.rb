@@ -3,6 +3,8 @@
 module DeckOfCardsRuby
   module Constants
     module Rank
+      ACCEPTED_VALUES = %w[2 3 4 5 6 7 8 9 10 j q k a].freeze
+
       TRANSLATIONS = {
         '2' => 'two',
         '3' => 'three',

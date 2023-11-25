@@ -8,7 +8,7 @@ module DeckOfCardsRuby
     extend Forwardable
 
     def initialize
-      @list = Rank::TRANSLATIONS.keys.product(Suit::ACCEPTED_VALUES).map do |rank, suit|
+      @list = Constants::Rank::ACCEPTED_VALUES.product(Constants::Suit::ACCEPTED_VALUES).map do |rank, suit|
         Card.new(rank, suit)
       end
     end
