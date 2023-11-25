@@ -9,15 +9,15 @@ module DeckOfCardsRuby
     end
 
     def validate
-      raise 'Invalid rank' unless Constants::Rank::ACCEPTED_VALUES.include?(@val)
+      raise 'Invalid rank' unless DeckOfCardsRuby::Constants::Rank::ACCEPTED_VALUES.include?(@val)
     end
 
     def to_s
-      Constants::Rank::TRANSLATIONS[@val]
+      DeckOfCardsRuby::Constants::Rank::TRANSLATIONS[@val]
     end
 
     def to_unicode_longitude
-      Constants::Rank::UNICODE_LONGITUDE[@val]
+      DeckOfCardsRuby::Constants::Rank::UNICODE_LONGITUDE[@val]
     end
   end
 end

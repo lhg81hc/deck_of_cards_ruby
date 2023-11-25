@@ -9,7 +9,7 @@ module DeckOfCardsRuby
     end
 
     def validate
-      raise 'Invalid suit' unless Constants::Suit::ACCEPTED_VALUES.include?(@val)
+      raise 'Invalid suit' unless DeckOfCardsRuby::Constants::Suit::ACCEPTED_VALUES.include?(@val)
     end
 
     def to_s
@@ -17,7 +17,7 @@ module DeckOfCardsRuby
     end
 
     def to_unicode_latitude
-      Constants::Suit::UNICODE_LATITUDE[@val]
+      DeckOfCardsRuby::Constants::Suit::UNICODE_LATITUDE[@val]
     end
   end
 end

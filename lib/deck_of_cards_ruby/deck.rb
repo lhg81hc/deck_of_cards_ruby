@@ -8,9 +8,12 @@ module DeckOfCardsRuby
     extend Forwardable
 
     def initialize
-      @list = Constants::Rank::ACCEPTED_VALUES.product(Constants::Suit::ACCEPTED_VALUES).map do |rank, suit|
-        Card.new(rank, suit)
-      end
+      @list =
+        DeckOfCardsRuby::Constants::Rank::ACCEPTED_VALUES.product(
+          DeckOfCardsRuby::Constants::Suit::ACCEPTED_VALUES
+        ).map do |rank, suit|
+          Card.new(rank, suit)
+        end
     end
 
     def_delegators :@list, :count, :shuffle!, :shift, :pop, :empty?
