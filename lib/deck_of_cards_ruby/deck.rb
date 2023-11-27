@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 require 'forwardable'
+require 'deck_of_cards_ruby/constants/rank'
+require 'deck_of_cards_ruby/constants/suit'
 
 module DeckOfCardsRuby
   # Class object which represents a deck of cards
