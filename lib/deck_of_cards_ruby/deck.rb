@@ -63,9 +63,7 @@ module DeckOfCardsRuby
       ranks = DeckOfCardsRuby::Constants::Rank::ACCEPTED_VALUES
       suits = DeckOfCardsRuby::Constants::Suit::ACCEPTED_VALUES
 
-      ranks.product(suits).map do |rank, suit|
-        Card.new(rank, suit)
-      end
+      ranks.product(suits).map { |rank, suit| Card.new(rank, suit) }
     end
   end
 end

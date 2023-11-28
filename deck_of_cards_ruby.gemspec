@@ -34,8 +34,9 @@ Gem::Specification.new do |spec|
     'lib/deck_of_cards_ruby/deck.rb',
     'lib/deck_of_cards_ruby/rank.rb',
     'lib/deck_of_cards_ruby/suit.rb',
+    'lib/deck_of_cards_ruby/version.rb',
     'lib/deck_of_cards_ruby/constants/rank.rb',
-    'lib/deck_of_cards_ruby/constants/suit.rb',
+    'lib/deck_of_cards_ruby/constants/suit.rb'
   ]
   spec.bindir = "exe"
   spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }

@@ -3,7 +3,8 @@
 $LOAD_PATH.unshift File.dirname(__FILE__)
 
 require 'deck_of_cards_ruby/version'
-require 'deck_of_cards_ruby/constants/constants'
+require 'deck_of_cards_ruby/constants/suit'
+require 'deck_of_cards_ruby/constants/rank'
 require 'deck_of_cards_ruby/card'
 require 'deck_of_cards_ruby/deck'
 require 'deck_of_cards_ruby/suit'
