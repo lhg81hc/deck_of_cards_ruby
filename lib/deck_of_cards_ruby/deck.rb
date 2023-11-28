@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 require 'forwardable'
-require 'deck_of_cards_ruby/constants/rank'
-require 'deck_of_cards_ruby/constants/suit'
 
 module DeckOfCardsRuby
   # Class object which represents a deck of cards
@@ -10,12 +8,7 @@ module DeckOfCardsRuby
     extend Forwardable
 
     def initialize
-      @list =
-        DeckOfCardsRuby::Constants::Rank::ACCEPTED_VALUES.product(
-          DeckOfCardsRuby::Constants::Suit::ACCEPTED_VALUES
-        ).map do |rank, suit|
-          Card.new(rank, suit)
-        end
+      @list = generate_deck
     end
 
     def_delegators :@list, :count, :shuffle!, :shift, :pop, :empty?
@@ -24,14 +17,14 @@ module DeckOfCardsRuby
       @list
     end
 
-    def draw(from = 'top')
-      case from
+    def draw(draw_position = 'top')
+      case draw_position
       when 'top'
         shift
       when 'bottom'
         pop
       else
-        raise "Invalid `from' argument"
+        raise "Invalid `draw position' argument"
       end
     end
 
@@ -62,6 +55,17 @@ module DeckOfCardsRuby
 
     def to_unicode
       @list.map(&:to_encoded_unicode).join('  ')
+    end
+
+    private
+
+    def generate_deck
+      ranks = DeckOfCardsRuby::Constants::Rank::ACCEPTED_VALUES
+      suits = DeckOfCardsRuby::Constants::Suit::ACCEPTED_VALUES
+
+      ranks.product(suits).map do |rank, suit|
+        Card.new(rank, suit)
+      end
     end
   end
 end

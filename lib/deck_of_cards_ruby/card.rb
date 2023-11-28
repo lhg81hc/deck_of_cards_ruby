@@ -5,9 +5,9 @@ module DeckOfCardsRuby
   class Card
     attr_reader :suit, :rank
 
-    def initialize(rank, suit)
-      @suit = Suit.new(suit)
-      @rank = Rank.new(rank)
+    def initialize(rank_val, suit_val)
+      @suit = Suit.new(suit_val)
+      @rank = Rank.new(rank_val)
     end
 
     def to_s
